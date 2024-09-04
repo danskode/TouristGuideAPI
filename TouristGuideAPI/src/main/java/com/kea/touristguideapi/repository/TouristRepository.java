@@ -12,9 +12,9 @@ public class TouristRepository {
     public TouristRepository() {
         //populateTouristAttractions();
         touristAttractions.add(new TouristAttraction("Rundetårn","Flot højt tårn i København."));
-        touristAttractions.add(new TouristAttraction("Odense Zoo","Her kan du bl.a. se en rød panda!"));
+        touristAttractions.add(new TouristAttraction("Odense Zoo","Her kan du bl.a. se en rød panda! Lidt uden for København ..."));
         touristAttractions.add(new TouristAttraction("Skagen","Her har alle de store danske malere været."));
-        touristAttractions.add(new TouristAttraction("hej","Test."));
+        touristAttractions.add(new TouristAttraction("Hedehusene","Meget idyllisk landsby med en spændende historie."));
     }
 
     public List<TouristAttraction> getAllTouristAttractions() {

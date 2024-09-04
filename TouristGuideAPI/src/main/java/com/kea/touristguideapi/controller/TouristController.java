@@ -33,27 +33,19 @@ public class TouristController {
         return new ResponseEntity<>(attraction, HttpStatus.OK);
     }
 
-    //create a new one ...
+    //create a new one ... virker ikke endnu
     @PostMapping("/add")
     public ResponseEntity<TouristAttraction> addTouristAttraction(@RequestBody TouristAttraction touristAttraction){
         TouristAttraction newAttraction = touristService.addTouristAttraction(touristAttraction);
         return new ResponseEntity<>(newAttraction, HttpStatus.CREATED);
     }
 
-    //delete one ...
+    //delete one ... virker ikke endnu
     @PostMapping("/delete/{name}")
     public ResponseEntity<List<TouristAttraction>> deleteTouristAttractionByName(@PathVariable String name){
         String nameStriped = name.toLowerCase().replaceAll("\\s", "");
         touristService.deleteTouristAttractionByName(nameStriped);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
-
-    //@Controller("/attractions/add") ... brug RequestParam
-    //@Controller("/attractions/update/") ... brug RequestParam
-    //@Controller("/attractions/delete/{name}") ... brug ResponseEntity
-
-
-
 
 }
