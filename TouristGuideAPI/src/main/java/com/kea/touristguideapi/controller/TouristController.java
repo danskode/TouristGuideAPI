@@ -33,7 +33,7 @@ public class TouristController {
         return new ResponseEntity<>(attraction, HttpStatus.OK);
     }
 
-    //create a new ...
+    //create a new one ...
     @PostMapping("/add")
     public ResponseEntity<TouristAttraction> addTouristAttraction(@RequestBody TouristAttraction touristAttraction){
         TouristAttraction newAttraction = touristService.addTouristAttraction(touristAttraction);
