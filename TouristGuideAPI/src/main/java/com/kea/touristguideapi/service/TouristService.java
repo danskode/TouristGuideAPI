@@ -26,8 +26,8 @@ public class TouristService {
         return touristRepository.addTouristAttraction(touristAttraction);
     }
 
-    public void deleteTouristAttractionByName(String nameStriped) {
-        touristRepository.deleteTouristAttractionByName(nameStriped);
+    public void deleteTouristAttractionByName(String name) {
+        touristRepository.deleteTouristAttractionByName(name);
     }
 
     //CRUD-metoder svarende til dem i Repository ...

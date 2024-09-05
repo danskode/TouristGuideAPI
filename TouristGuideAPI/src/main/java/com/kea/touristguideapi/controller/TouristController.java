@@ -42,10 +42,9 @@ public class TouristController {
 
     //delete one ... virker ikke endnu
     @PostMapping("/delete/{name}")
-    public ResponseEntity<List<TouristAttraction>> deleteTouristAttractionByName(@PathVariable String name){
+    public ResponseEntity<String> deleteTouristAttractionByName(@PathVariable String name) {
         String nameStriped = name.toLowerCase().replaceAll("\\s", "");
         touristService.deleteTouristAttractionByName(nameStriped);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>("Attraction deleted", HttpStatus.OK);
     }
-
 }

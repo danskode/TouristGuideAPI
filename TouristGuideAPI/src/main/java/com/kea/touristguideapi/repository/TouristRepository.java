@@ -38,10 +38,10 @@ public class TouristRepository {
         return touristAttraction;
     }
 
-    public void deleteTouristAttractionByName(String nameStriped) {
+    public void deleteTouristAttractionByName(String name) {
         for (TouristAttraction touristAttraction : touristAttractions) {
             String getName = touristAttraction.getName().toLowerCase().replaceAll("\\s", "");
-            if (getName.equals(nameStriped)) {
+            if (getName.equals(name)) {
                 touristAttractions.remove(touristAttraction);
             }
         }
