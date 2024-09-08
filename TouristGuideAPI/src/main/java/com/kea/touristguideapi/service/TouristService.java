@@ -33,6 +33,4 @@ public class TouristService {
     public void deleteTouristAttractionByName(String name) {
         touristRepository.deleteTouristAttractionByName(name);
     }
-
-    //CRUD-metoder svarende til dem i Repository ...
 }
