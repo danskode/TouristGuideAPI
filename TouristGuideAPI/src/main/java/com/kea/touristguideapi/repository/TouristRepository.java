@@ -21,13 +21,11 @@ public class TouristRepository {
         return touristAttractions;
     }
 
-    public List<TouristAttraction> getTouristAttractionByName(String name) {
+    public TouristAttraction getTouristAttractionByName(String name) {
         for(TouristAttraction touristAttraction : touristAttractions) {
             String getName = touristAttraction.getName().toLowerCase().replaceAll("\\s", "");
             if (getName.equals(name)) {
-                List<TouristAttraction> match = new ArrayList<>();
-                match.add(touristAttraction);
-                return match;
+                return touristAttraction;
             }
         }
         return null;
@@ -36,6 +34,11 @@ public class TouristRepository {
     public TouristAttraction addTouristAttraction(TouristAttraction touristAttraction) {
         touristAttractions.add(touristAttraction);
         return touristAttraction;
+    }
+
+    public void updateTouristAttraction(TouristAttraction attraction, String name, String description) {
+        attraction.setName(name);
+        attraction.setDescription(description);
     }
 
     public void deleteTouristAttractionByName(String name) {

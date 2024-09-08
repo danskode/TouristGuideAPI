@@ -27,20 +27,29 @@ public class TouristController {
 
     //search for one ...
     @GetMapping("/{name}")
-    public ResponseEntity<List<TouristAttraction>> getTouristAttractionByName(@PathVariable String name){
+    public ResponseEntity<TouristAttraction> getTouristAttractionByName(@PathVariable String name){
         String nameStriped = name.toLowerCase().replaceAll("\\s", "");
-        List<TouristAttraction> attraction = touristService.getTouristAttractionByName(nameStriped);
+        TouristAttraction attraction = touristService.getTouristAttractionByName(nameStriped);
         return new ResponseEntity<>(attraction, HttpStatus.OK);
     }
 
-    //create a new one ... virker ikke endnu
+    //create a new one ... virker ikke pt ...
     @PostMapping("/add")
     public ResponseEntity<TouristAttraction> addTouristAttraction(@RequestBody TouristAttraction touristAttraction){
         TouristAttraction newAttraction = touristService.addTouristAttraction(touristAttraction);
         return new ResponseEntity<>(newAttraction, HttpStatus.CREATED);
     }
 
-    //delete one ... virker ikke endnu
+    //edit one ...
+    @PostMapping("/update/{urlName}")
+    public ResponseEntity<String> updateTouristAttraction(@PathVariable String urlName, @RequestBody String name, String description){
+        String nameStriped = urlName.toLowerCase().replaceAll("\\s", "");
+        TouristAttraction attraction = touristService.getTouristAttractionByName(nameStriped);
+        touristService.updateTouristAttraction(attraction, name, description);
+        return new ResponseEntity<>("Updated just fine!", HttpStatus.OK);
+    }
+
+    //delete one ...
     @PostMapping("/delete/{name}")
     public ResponseEntity<String> deleteTouristAttractionByName(@PathVariable String name) {
         String nameStriped = name.toLowerCase().replaceAll("\\s", "");

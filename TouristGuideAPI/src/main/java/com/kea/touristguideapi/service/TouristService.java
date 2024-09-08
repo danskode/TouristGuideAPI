@@ -18,12 +18,16 @@ public class TouristService {
         return touristRepository.getAllTouristAttractions();
     }
 
-    public List<TouristAttraction> getTouristAttractionByName(String name) {
+    public TouristAttraction getTouristAttractionByName(String name) {
         return touristRepository.getTouristAttractionByName(name);
     }
 
     public TouristAttraction addTouristAttraction(TouristAttraction touristAttraction) {
         return touristRepository.addTouristAttraction(touristAttraction);
+    }
+
+    public void updateTouristAttraction(TouristAttraction touristAttraction, String name, String description) {
+        touristRepository.updateTouristAttraction(touristAttraction, name, description);
     }
 
     public void deleteTouristAttractionByName(String name) {
