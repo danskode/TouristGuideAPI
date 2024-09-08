@@ -36,8 +36,7 @@ public class TouristRepository {
         return touristAttraction;
     }
 
-    public void updateTouristAttraction(TouristAttraction attraction, String name, String description) {
-        attraction.setName(name);
+    public void updateTouristAttraction(TouristAttraction attraction, String description) {
         attraction.setDescription(description);
     }
 

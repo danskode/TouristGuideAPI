@@ -33,7 +33,7 @@ public class TouristController {
         return new ResponseEntity<>(attraction, HttpStatus.OK);
     }
 
-    //create a new one ... virker ikke pt ...
+    //create a new one ...
     @PostMapping("/add")
     public ResponseEntity<TouristAttraction> addTouristAttraction(@RequestBody TouristAttraction touristAttraction){
         TouristAttraction newAttraction = touristService.addTouristAttraction(touristAttraction);
@@ -41,12 +41,12 @@ public class TouristController {
     }
 
     //edit one ...
-    @PostMapping("/update/{urlName}")
-    public ResponseEntity<String> updateTouristAttraction(@PathVariable String urlName, @RequestBody String name, String description){
-        String nameStriped = urlName.toLowerCase().replaceAll("\\s", "");
+    @PostMapping("/update/{name}")
+    public ResponseEntity<String> updateTouristAttraction(@PathVariable String name, @RequestBody String description){
+        String nameStriped = name.toLowerCase().replaceAll("\\s", "");
         TouristAttraction attraction = touristService.getTouristAttractionByName(nameStriped);
-        touristService.updateTouristAttraction(attraction, name, description);
-        return new ResponseEntity<>("Updated just fine!", HttpStatus.OK);
+        touristService.updateTouristAttraction(attraction, description);
+        return new ResponseEntity<>("Updated succesfully", HttpStatus.OK);
     }
 
     //delete one ...
