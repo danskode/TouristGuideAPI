@@ -35,13 +35,17 @@
     <h3>Infobox</h3>
     <p>When I am able to use POST you will be the creator of this site. With full CRUD functionality. But for now, you just have to click around.</p>
     <br>
-    <form action="/attractions/add">
-        <label for="name">Name of attraction:</label><br>
-        <input type="text" id="name" name="name" value=""><br>
-        <label for="description">Your description:</label><br>
+
+    <form action="attractions/add" method="post">
+        <label for="name">Attraction name:</label>
+        <input type="text" id="name" name="name" value=""><br><br>
+        <label for="description">Description:</label>
         <input type="text" id="description" name="description" value=""><br><br>
-        <input type="submit" value="Add now!">
+        <input type="submit" value="Add">
     </form>
+
+
+
 
 </aside>
 

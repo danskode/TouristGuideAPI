@@ -8,14 +8,14 @@ header {
     text-align: center;
 }
 
-#main > a {
+#main a {
     font-weight: bolder;
     color: red;
-    padding: 0px 20px 10px 20px;
+    padding: 0 20px 10px 20px;
     text-decoration: none;
 }
 
-#main > a:hover {
+#main a:hover {
     background-color: red;
     color: white;
 }
@@ -39,7 +39,6 @@ aside{
     border: 2px solid red;
     padding: 20px;
 }
-
 
 #attractions {
     float: left;

@@ -31,9 +31,10 @@ public class TouristRepository {
         return null;
     }
 
-    public TouristAttraction addTouristAttraction(TouristAttraction touristAttraction) {
-        touristAttractions.add(touristAttraction);
-        return touristAttraction;
+    public TouristAttraction addTouristAttraction(String name, String description) {
+        TouristAttraction newTouristAttraction = new TouristAttraction(name, description);
+        touristAttractions.add(newTouristAttraction);
+        return newTouristAttraction;
     }
 
     public void updateTouristAttraction(TouristAttraction attraction, String description) {
