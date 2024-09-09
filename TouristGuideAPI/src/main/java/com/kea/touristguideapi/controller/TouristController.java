@@ -42,11 +42,16 @@ public class TouristController {
 
     //edit one ...
     @PostMapping("/update/{name}")
-    public ResponseEntity<String> updateTouristAttraction(@PathVariable String name, @RequestBody String description){
+    public ResponseEntity<String> updateTouristAttraction(@PathVariable String name, String description){
         String nameStriped = name.toLowerCase().replaceAll("\\s", "");
         TouristAttraction attraction = touristService.getTouristAttractionByName(nameStriped);
-        touristService.updateTouristAttraction(attraction, description);
-        return new ResponseEntity<>("Updated succesfully", HttpStatus.OK);
+
+        if (attraction != null) {
+            touristService.updateTouristAttraction(attraction, description);
+            return new ResponseEntity<>("Updated succesfully", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
     //delete one ...
