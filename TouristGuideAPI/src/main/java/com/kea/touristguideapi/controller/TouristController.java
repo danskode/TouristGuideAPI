@@ -20,7 +20,7 @@ public class TouristController {
 
     // see all ...
     @GetMapping("")
-    public ResponseEntity<List<TouristAttraction>> getAllMessages(){
+    public ResponseEntity<List<TouristAttraction>> getAllTouristAttractions(){
         List<TouristAttraction> touristAttractions = touristService.getAllTouristAttractions();
         return new ResponseEntity<>(touristAttractions, HttpStatus.OK);
     }
